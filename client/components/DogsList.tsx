@@ -15,6 +15,8 @@ export default function DogsList(){
   //using useQuery to connect everything up to our server side using our actual data from the database, instead of our hard-coded data
   const {data: dogs, isPending, isError} = useQuery({queryKey: ['dogs'], queryFn: () => fetchDog()})
   const queryClient = useQueryClient()
+
+  //to delete a dog
   const deleteMutation = useMutation({
     mutationFn: deleteDog,
     onSuccess: () => {
