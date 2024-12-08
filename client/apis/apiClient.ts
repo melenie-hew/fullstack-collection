@@ -14,3 +14,8 @@ export async function fetchDogById(id: number): Promise<DogModel> {
 export async function addNewDog(newDog: DogModel) {
   await request.post('/api/v1/dogs').send(newDog)
 }
+
+
+export async function deleteDog(id: number) {
+  await request.delete(`/api/v1/dogs/${id}`)
+}
